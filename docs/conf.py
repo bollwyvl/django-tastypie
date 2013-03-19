@@ -13,6 +13,8 @@
 
 import sys, os
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -41,9 +43,9 @@ project = u'Tastypie'
 copyright = u'2010-2013, Daniel Lindsley, Cody Soyland, Matt Croydon, Josh Bohde & Issac Kelly'
 
 # TASTYPIE SPECIFIC
-import rose
-RELEASE_VERSION = rose.load_version('../VERSION')
-SHORT_VERSION = RELEASE_VERSION.split('-')[0]
+import tastypie
+RELEASE_VERSION = tastypie.__version__
+SHORT_VERSION = tastypie.__version__.split('-')[0]
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

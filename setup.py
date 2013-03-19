@@ -7,11 +7,13 @@ except ImportError:
     use_setuptools()
     from setuptools import setup
 
-import rose
+__version__ = 'undefined'
+
+exec open('tastypie/version.py')
 
 setup(
     name='django-tastypie',
-    version=rose.load_version('VERSION'),
+    version=__version__,
     description='A flexible & capable API layer for Django.',
     author='Daniel Lindsley',
     author_email='daniel@toastdriven.com',
@@ -32,12 +34,10 @@ setup(
     },
     zip_safe=False,
     requires=[
-        'rose(>=1.0.0)',
         'mimeparse',
         'dateutil(>=1.5, !=2.0)',
     ],
     install_requires=[
-        'rose >= 1.0',
         'mimeparse',
         'python_dateutil >= 1.5, != 2.0',
     ],
